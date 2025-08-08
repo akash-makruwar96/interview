@@ -11,6 +11,9 @@ variable "bucket_name" {
   default = "my-buckke"
 }
 
+===================================================================================================================
+
+
 ######## main.tf ###########
 provider "aws" {
   region = "us-east-1"
@@ -24,6 +27,11 @@ module "s3" {
     module "VPC" {
       source = "./vpc"
     }
+
+
+====================================================================================================
+
+
 ######## vpc.tf ########
 resource "aws_vpc" "name" {
   cidr_block = var.cidr_block
@@ -35,3 +43,4 @@ variable "cidr_block" {
   type        = string
   default     = "10.0.0.0/16"
 }
+
