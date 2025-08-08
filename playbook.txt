@@ -8,6 +8,8 @@
   - name: Create a file
     file: path=/home/TDI-Batch.txt state=touch
 
+=============================================================================================
+
 ########## install_package.yml ##########
 
 ---
@@ -20,6 +22,10 @@
      yum: name=httpd state=present
    - name: Start httpd service
      service: name=httpd state=started
+
+
+===================================================================================================
+
 
 ########## os_condition.yml ############
 
@@ -39,6 +45,11 @@
     when: ansible_os_family == "RedHat"
     ignore_errors: True
 
+
+==========================================================================================================
+
+
+
 ######### variable.yml ###########
 
 - hosts: all
@@ -49,3 +60,4 @@
      debug:
 
       msg: "{{ name }}"
+
