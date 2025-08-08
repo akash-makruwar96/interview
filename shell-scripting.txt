@@ -7,6 +7,11 @@ read b
 echo "Hello value of a is $a and value of b is $b"
 echo "Do you understand the script?"
 
+
+=================================================================================================================
+
+
+
 ########variables########
 #!/bin/sh
 #This script is to make variable read only, means we cannot set the value of NAME variable again
@@ -15,6 +20,10 @@ readonly NAME
 NAME=DEVOPS
 echo "my name is: $NAME"
 
+
+================================================================================================================
+
+
 ########loop ######
 #!/bin/sh
 a=0
@@ -22,4 +31,5 @@ while [ $a -lt 10 ]
 do
  echo $a
  a=`expr $a + 1`
+
 done
