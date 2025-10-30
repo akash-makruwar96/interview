@@ -17,3 +17,23 @@ pipeline {
                 )
             }
         }
+    stage('Terraform Init') {
+            steps {
+                sh 'terraform init -reconfigure'
+            }
+        }
+
+        stage('Terraform Plan') {
+            steps {
+                sh 'terraform plan'
+            }
+        }
+
+        stage('Action') {
+            steps {
+                echo "Terraform action is --> ${params.action}"
+                sh "terraform ${params.action} --auto-approve"
+            }
+        }
+    }
+}
